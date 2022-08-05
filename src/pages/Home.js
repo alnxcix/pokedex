@@ -27,7 +27,7 @@ const Home = () => {
           <Link to={`/${i + 1}`} className="text-decoration-none">
             <div className="card btn btn-outline-dark rounded-pill">
               <div className="card-body">
-                <h4 className="m-0 p-0">
+                <h4 className="m-0 p-0 text-truncate">
                   <small className="text-muted">#{i + 1}</small>{" "}
                   <span className="text-capitalize">
                     {pokemon.name.replace(/\-/g, " ")}

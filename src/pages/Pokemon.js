@@ -40,18 +40,18 @@ const Pokemon = () => {
                 No sprite/image available for this Pokémon.
               </div>
             )}
-            <div className="d-flex">
+            <div className="d-flex flex-sm-row flex-column">
               {pokemon.sprites.front_default ? (
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 m-3">
                   <img
                     alt={species.name}
-                    className="rounded-circle shadow"
+                    className="rounded-circle shadow mx-auto d-block"
                     src={pokemon.sprites.front_default}
                     width={200}
                   />
                 </div>
               ) : null}
-              <div className="flex-grow-1 ms-3">
+              <div className="flex-grow-1">
                 <div className="align-items-center d-flex mb-3">
                   <h3 className="card-title m-0 me-3 text-capitalize">
                     <small className="text-muted">#{params.order}</small>{" "}
