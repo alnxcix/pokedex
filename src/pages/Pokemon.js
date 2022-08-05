@@ -42,7 +42,7 @@ const Pokemon = () => {
             )}
             <div className="d-flex flex-sm-row flex-column">
               {pokemon.sprites.front_default ? (
-                <div className="flex-shrink-0 m-3">
+                <div className="flex-shrink-0 mx-3 mb-3">
                   <img
                     alt={species.name}
                     className="rounded-circle shadow mx-auto d-block"
@@ -57,16 +57,18 @@ const Pokemon = () => {
                     <small className="text-muted">#{params.order}</small>{" "}
                     {species.name.replace(/\-/, " ")}
                   </h3>
-                  {pokemon.types.map((type) => (
-                    <span
-                      className="badge me-2 text-capitalize"
-                      style={{
-                        backgroundColor: getColorOfType(type.type.name),
-                      }}
-                    >
-                      {type.type.name}
-                    </span>
-                  ))}
+                  <div>
+                    {pokemon.types.map((type) => (
+                      <span
+                        className="badge me-2 text-capitalize"
+                        style={{
+                          backgroundColor: getColorOfType(type.type.name),
+                        }}
+                      >
+                        {type.type.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
                 <h6 className="card-subtitle mb-3 text-muted text-capitalize">
                   Abilities:{" "}
