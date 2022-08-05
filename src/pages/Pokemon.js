@@ -127,6 +127,7 @@ const Pokemon = () => {
                 type="button"
                 className="btn btn-light shadow-none"
                 disabled={params.order <= 1}
+                onClick={() => setLoading(true)}
               >
                 <FontAwesomeIcon icon={faChevronLeft} /> Previous
               </button>
@@ -139,6 +140,7 @@ const Pokemon = () => {
                 type="button"
                 className="btn btn-light shadow-none"
                 disabled={params.order >= 905}
+                onClick={() => setLoading(true)}
               >
                 Next <FontAwesomeIcon icon={faChevronRight} />
               </button>
