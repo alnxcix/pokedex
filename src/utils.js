@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getPokemonList = async () => {
   const response = await axios.get(
-    "https://pokeapi.co/api/v2/pokemon-species?limit=905&offset=0"
+    "https://pokeapi.co/api/v2/pokemon-species?limit=905"
   );
   return response;
 };
@@ -28,7 +28,7 @@ export const getPokemonSpecies = async (name) => {
 };
 
 export const getColorOfType = (type) => {
-  const colours = {
+  return {
     normal: "#A8A77A",
     fire: "#EE8130",
     water: "#6390F0",
@@ -47,15 +47,16 @@ export const getColorOfType = (type) => {
     dark: "#705746",
     steel: "#B7B7CE",
     fairy: "#D685AD",
-  };
-  return colours[type];
+  }[type];
 };
 
 export const getShortenedStat = (stat) => {
-  if (stat === "hp") return "HP";
-  if (stat === "attack") return "ATK";
-  if (stat === "defense") return "DEF";
-  if (stat === "special-attack") return "SP. ATK";
-  if (stat === "special-defense") return "SP. DEF";
-  if (stat === "speed") return "SPD";
+  return {
+    hp: "HP",
+    attack: "ATK",
+    defense: "DEF",
+    "special-attack": "SP. ATK",
+    "special-defense": "SP. DEF",
+    speed: "SPD",
+  }[stat];
 };

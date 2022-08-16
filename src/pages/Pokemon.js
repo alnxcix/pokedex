@@ -31,44 +31,40 @@ const Pokemon = () => {
   return isLoading ? (
     <div className="spinner-border text-light mx-auto d-block" />
   ) : (
-    <div className="row justify-content-center">
-      <div className="col-lg-6 align-self-center">
-        <div className="card w-100 mb-3">
+    <div className="row d-flex justify-content-center">
+      <div className="col-lg-6">
+        <div className="card mb-3">
           <div className="card-body">
             {pokemon.sprites.front_default ? null : (
               <div className="alert alert-warning">
                 No sprite/image available for this Pokémon.
               </div>
             )}
-            <div className="d-flex flex-sm-row flex-column">
+            <div className="align-items-start d-flex flex-md-row flex-column gap-3">
               {pokemon.sprites.front_default ? (
-                <div className="flex-shrink-0 mx-3 mb-3">
-                  <img
-                    alt={species.name}
-                    className="rounded-circle shadow mx-auto d-block"
-                    src={pokemon.sprites.front_default}
-                    width={200}
-                  />
-                </div>
+                <img
+                  alt={species.name}
+                  className="mx-auto d-block rounded-circle shadow"
+                  src={pokemon.sprites.front_default}
+                  width={200}
+                />
               ) : null}
               <div className="flex-grow-1">
-                <div className="align-items-center d-flex mb-3">
-                  <h3 className="card-title m-0 me-3 text-capitalize">
+                <div className="align-items-center d-flex gap-1 mb-3">
+                  <h4 className="card-title text-capitalize">
                     <small className="text-muted">#{params.order}</small>{" "}
                     {species.name.replace(/\-/, " ")}
-                  </h3>
-                  <div>
-                    {pokemon.types.map((type) => (
-                      <span
-                        className="badge me-2 text-capitalize"
-                        style={{
-                          backgroundColor: getColorOfType(type.type.name),
-                        }}
-                      >
-                        {type.type.name}
-                      </span>
-                    ))}
-                  </div>
+                  </h4>
+                  {pokemon.types.map((type) => (
+                    <div
+                      className="badge text-capitalize"
+                      style={{
+                        backgroundColor: getColorOfType(type.type.name),
+                      }}
+                    >
+                      {type.type.name}
+                    </div>
+                  ))}
                 </div>
                 <h6 className="card-subtitle mb-3 text-muted text-capitalize">
                   Abilities:{" "}
@@ -76,7 +72,7 @@ const Pokemon = () => {
                     .map((ability) => ability.ability.name.replace(/\-/, " "))
                     .join(", ")}
                 </h6>
-                <p className="card-text">
+                <p className="card-text lead">
                   {JSON.stringify(
                     species.flavor_text_entries
                       .filter((e) => e.language.name === "en")[0]
