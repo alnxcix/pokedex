@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.84d50de0.css",
+    "main.js": "/static/js/main.51ac28ce.js",
+    "static/media/bg2.webp": "/static/media/bg2.cd8326ae3c8c1c0a88e4.webp",
+    "static/media/pokeball.webp": "/static/media/pokeball.5f983e0eb3628f508529.webp",
+    "static/media/pokeapi.webp": "/static/media/pokeapi.f3d1feb2079cbee445a5.webp",
+    "index.html": "/index.html",
+    "main.84d50de0.css.map": "/static/css/main.84d50de0.css.map",
+    "main.51ac28ce.js.map": "/static/js/main.51ac28ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.84d50de0.css",
+    "static/js/main.51ac28ce.js"
+  ]
+}
